@@ -66,8 +66,8 @@ RSpec.describe Api::V1::PokemonsController, type: :controller do
         expect(response).to be_successful
       end
 
-      it "returns a success response if id is passed" do
-        get :show, params: { slug: pokemon.to_param }
+      it "returns a success response if pokedex number is passed" do
+        get :show, params: { slug: pokemon.pokedex_number.to_param }
         expect(response).to be_successful
       end
     end
