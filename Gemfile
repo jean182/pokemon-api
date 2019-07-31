@@ -8,6 +8,8 @@ ruby "2.6.3"
 gem "active_model_serializers", "~> 0.10.0"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "faker", git: "https://github.com/stympy/faker.git", branch: "master"
+gem "faraday"
+gem "faraday_middleware"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.11"
 gem "rack-cors"

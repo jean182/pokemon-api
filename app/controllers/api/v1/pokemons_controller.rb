@@ -19,7 +19,7 @@ class Api::V1::PokemonsController < Api::V1::ApiController
 
   def set_pokemon
     @pokemon =
-      Pokemon.find_by(slug: params[:slug]) || Pokemon.find_by!(id: params[:slug])
+      Pokemon.find_by(slug: params[:slug]) || Pokemon.find_by!(pokedex_number: params[:slug])
   end
 
 end
