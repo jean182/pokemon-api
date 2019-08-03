@@ -4,7 +4,10 @@ class Pokemon < ApplicationRecord
 
   validates :name, :pokedex_number, presence: true
   validates :name, :slug, :pokedex_number, uniqueness: true
+  belongs_to :region
   before_create :set_slug
+
+  scope :region, ->(region) { joins(:region).merge(Region.where(name: region)) }
 
   private
 

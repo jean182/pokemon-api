@@ -1,9 +1,18 @@
 # frozen_string_literal: true
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+tasks = %i[
+  populate_kanto_pokemon
+  populate_johto_pokemon
+  populate_hoenn_pokemon
+  populate_sinnoh_pokemon
+  populate_unova_pokemon
+  populate_kalos_pokemon
+  populate_alola_pokemon
+]
+
+start_time = Time.now
+tasks.each do |task|
+  Rake::Task[task].invoke
+end
+time_diff = Time.at(Time.now - start_time).utc.strftime("%T")
+puts "\nProcess finished in #{time_diff}."
