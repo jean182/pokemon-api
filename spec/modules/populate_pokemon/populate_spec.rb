@@ -7,7 +7,8 @@ module PopulatePokemon
   RSpec.describe Populate do
     describe "#populate" do
       context "creates new pokemon when valid data is passed" do
-        let(:populate) { described_class.new(1) }
+        let(:region) { create(:region) }
+        let(:populate) { described_class.new(1, region.name) }
         let(:valid_result) do
           PokemonResult.new(
             1,
@@ -27,7 +28,8 @@ module PopulatePokemon
       end
 
       context "does not create a new pokemon when invalid data is passed in" do
-        let(:populate) { described_class.new(1) }
+        let(:region) { create(:region) }
+        let(:populate) { described_class.new(1, region.name) }
         let(:invalid_result) do
           PokemonResult.new(
             1,

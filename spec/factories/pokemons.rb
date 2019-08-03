@@ -7,5 +7,6 @@ FactoryBot.define do
     pokedex_entry { Faker::Lorem.paragraph }
     height { Faker::Measurement.height }
     weight { Faker::Measurement.weight }
+    region
   end
 end

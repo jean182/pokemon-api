@@ -5,10 +5,11 @@ module PopulatePokemon
   # Populates the pokemon table
   class Populate
 
-    attr_reader :pokedex_number
+    attr_reader :pokedex_number, :region
 
-    def initialize(pokedex_number)
+    def initialize(pokedex_number, region)
       @pokedex_number = pokedex_number
+      @region = region
     end
 
     def populate
@@ -23,6 +24,7 @@ module PopulatePokemon
         name: pokemon.name,
         height: pokemon.height,
         weight: pokemon.weight,
+        region_id: Region.where(name: region).first_or_create.id,
       )
 
       if pokemon_instance.save
