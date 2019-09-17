@@ -6,7 +6,7 @@ class Api::V1::PokemonsController < Api::V1::ApiController
   before_action :set_pokemon, only: :show
 
   def index
-    @pokemons = Pokemon.paginate(page: params[:page], per_page: 10)
+    @pokemons = Pokemon.paginate(page: params[:page], per_page: 30)
 
     json_response(@pokemons)
   end
