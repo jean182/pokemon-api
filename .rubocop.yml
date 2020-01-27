@@ -17,6 +17,8 @@ Metrics/AbcSize:
 
 Metrics/LineLength:
   Max: 100
+  Exclude:
+    - "db/**/*"
 
 Metrics/MethodLength:
   Max: 20

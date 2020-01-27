@@ -30,3 +30,7 @@
 
 # RVM specific
 .ruby-gemset
+
+# dotenv environment variables file
+.env
+.env.development
