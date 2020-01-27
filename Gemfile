@@ -7,6 +7,8 @@ ruby "2.6.3"
 
 gem "active_model_serializers", "~> 0.10.0"
 gem "bootsnap", ">= 1.1.0", require: false
+gem "devise"
+gem "devise-jwt"
 gem "faker", git: "https://github.com/stympy/faker.git", branch: "master"
 gem "faraday"
 gem "faraday_middleware"
@@ -18,6 +20,7 @@ gem "will_paginate", "~> 3.1.0"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "dotenv-rails", groups: %i[development test]
   gem "rspec-rails", "~> 3.8"
 end
 

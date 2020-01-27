@@ -14,6 +14,15 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     resource "*",
              headers: :any,
              methods: %i[get post put patch delete options head],
-             expose: %w[X-Total X-Total-Pages X-Page X-Per-Page X-Next-Page X-Prev-Page]
+             expose:
+              %w[
+                Authorization
+                X-Total
+                X-Total-Pages
+                X-Page
+                X-Per-Page
+                X-Next-Page
+                X-Prev-Page
+              ]
   end
 end

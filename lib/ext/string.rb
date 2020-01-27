@@ -1,5 +1,10 @@
+# frozen_string_literal: true
+
+# Custom method to check if string is an integer.
 class String
-  def is_integer?
-    /\A[-+]?\d+\z/ === self
+
+  def integer?
+    self =~ /\A[-+]?\d+\z/
   end
+
 end

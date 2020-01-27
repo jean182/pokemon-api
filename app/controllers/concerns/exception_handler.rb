@@ -6,7 +6,7 @@ module ExceptionHandler
 
   included do
     rescue_from ActiveRecord::RecordNotFound do |error|
-      name_or_num = params[:slug].is_integer? ? "id" : "name"
+      name_or_num = params[:slug].integer? ? "id" : "name"
       message_error = "#{error.message} with #{name_or_num} #{params[:slug]}"
       json_response({ error: message_error }, 404)
     end
